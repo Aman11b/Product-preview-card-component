@@ -1,0 +1,239 @@
+/* general reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+/* outline: 1px red solid; */
+
+}
+
+/* Prevent font size inflation */
+html {
+-moz-text-size-adjust: none;
+-webkit-text-size-adjust: none;
+text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+list-style: none;
+}
+
+/* Set core body defaults */
+body {
+min-height: 100vh;
+line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+text-decoration-skip-ink: auto;
+color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+max-width: 100%;
+display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+font-family: inherit;
+font-size: inherit;
+}
+
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+scroll-margin-block: 5ex;
+}
+
+
+/* custom porperties  */
+
+/* Colors */
+:root {
+    --green-500: hsl(158, 36%, 37%);
+    --green-700: hsl(158, 42%, 18%);
+    --black: hsl(212, 21%, 14%);
+    --grey: hsl(228, 12%, 48%);
+    --cream: hsl(30, 38%, 92%);
+    --white: hsl(0, 0%, 100%);
+
+
+    --fs-M:"Montserrat", sans-serif;
+    --fs-F: "Fraunces", serif;
+}
+
+/* Typography */
+body {
+font-family:var(--fs-M);
+font-size: 14px;
+color: var(--black);
+
+background-color: var(--cream);
+}
+
+p {
+font-weight: 500;
+}
+
+.wrapper{
+    min-height: 100vh;
+
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;  
+    
+}
+
+.container{
+    width:580px;
+
+    background-color: var(--white);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    border-radius: 10px;
+    
+}
+
+.image,
+.content {
+    flex: 1;
+}
+
+.image >img{
+    height: 100%;
+    width: 100%;
+
+    object-fit:cover;
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    
+}
+
+/* Default desktop image */
+.responsive-image {
+    content: url('./images/image-product-desktop.jpg');
+}
+
+.content {
+    padding: 2rem;
+}
+
+.content > .title {
+    font-family: var(--fs-M);
+    color: var(--grey);
+    letter-spacing: 8px;
+}
+
+.content h1{
+    font-family: var(--fs-F);
+    max-width: 10ch;
+    color: var(--green-700);
+}
+.para{
+    padding: 1rem 0;
+}
+
+.price {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    padding: 1rem 0;
+}
+
+.current_price{
+    font-family: var(--fs-F);
+    font-weight: bolder;
+    font-size: 40px;
+    color: var(--green-500);
+
+    margin: 0;
+    padding-right: 0.5rem;
+}
+
+.prev_price{
+    margin: 0;
+    text-decoration: line-through;
+    color: var(--grey);
+    
+}
+
+button {
+    background-color: var(--green-500);
+    border-radius: 6px;
+    width: 100%;
+    height: 3rem;
+    border-style: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap:6px;
+
+    color: var(--white);
+    font-weight: bold;
+
+
+}
+
+button > p {
+    margin-top: 0;
+}
+/* mobile */
+@media screen and (max-width: 375px) {
+    .container {
+        max-width: 100%;
+        padding: 0 8px;
+    }
+
+    body {
+    font-size: 12px; /* Adjusted for better readability on smaller screens */
+    }
+
+    h1, h2, h3 {
+    font-size: 18px; /* Ensure headings remain legible */
+    }
+
+    p {
+    font-size: 12px;
+    }
+
+
+    .responsive-image {
+        content: url('./images/image-product-mobile.jpg');
+    }
+
+}
