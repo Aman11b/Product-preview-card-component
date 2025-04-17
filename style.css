@@ -152,13 +152,13 @@ background-color: var(--cream);
     }
 
     .content {
-    padding: 1rem;
+    padding: 0.8rem;
     }
 
     .content > .title {
     font-family: var(--fs-M);
     color: var(--grey);
-    letter-spacing: 8px;
+    letter-spacing: 7px;
     }
 
     .content h1{
@@ -168,11 +168,58 @@ background-color: var(--cream);
     }
 
     .para{
-    padding: 0.5rem 0;
+        padding: 1rem 0;
+        margin-top: 0;
     }
     
     .responsive-image {
         content: url('./images/image-product-mobile.jpg');
+    }
+
+    .price{
+        display: flex;
+        flex-direction: row;
+
+        gap: 8px;
+    }
+
+    .current_price {
+        color: var(--green-700);
+        font-size: 36px;
+        font-family: var(--fs-F);
+        font-weight: bold;
+
+        margin-top: 0;
+    }
+
+    .prev_price{
+        text-decoration:line-through;
+    }
+
+    button{
+        display:flex;
+        gap: 4px;
+
+        min-width: 90%;
+        height: 3rem;
+        justify-content: center;
+        justify-self: center;
+
+        background-color: var(--green-500);
+
+        border-style: none;
+        border-radius: 8px;
+        color: var(--white);
+
+        margin: 1rem 0 0 0;
+
+    }
+    .content > button {
+        align-items: center;
+    }
+    
+    button >p {
+        margin-top: 0;
     }
 
 }
